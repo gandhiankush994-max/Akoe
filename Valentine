@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Srishti ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+  }
+  .card {
+    background: rgba(255,255,255,0.18);
+    padding: 25px;
+    border-radius: 20px;
+    width: 350px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    backdrop-filter: blur(10px);
+  }
+  img {
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 15px;
+  }
+  button {
+    padding: 12px 22px;
+    margin: 10px;
+    border: none;
+    border-radius: 25px;
+    font-size: 15px;
+    cursor: pointer;
+    background: #fff;
+    color: #ff4d6d;
+    font-weight: bold;
+  }
+  .hidden { display: none; }
+</style>
+</head>
+
+<body>
+
+<audio id="music" loop>
+  <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3">
+</audio>
+
+<div class="card">
+
+  <div id="startScreen">
+    <h1>Hey Srishti ❤️</h1>
+    <p>I made something just for you.</p>
+    <button onclick="start()">Tap here</button>
+  </div>
+
+  <div id="proposal" class="hidden">
+    <img src="https://via.placeholder.com/300x200?text=Your+Photo+Here">
+    <h2>Srishti, will you be my Valentine? 💖</h2>
+    <button onclick="yes()">YES 😍</button>
+    <button id="noBtn" onmouseover="moveNo()">NO 🙃</button>
+  </div>
+
+  <div id="yesScreen" class="hidden">
+    <h1>YAYYYY 🥰</h1>
+    <p>You just made my heart really happy.</p>
+    <button onclick="finalLove()">Next ❤️</button>
+  </div>
+
+  <div id="loveScreen" class="hidden">
+    <h1>I Love You, Srishti ❤️</h1>
+    <p>Happy Valentine’s Day 💐</p>
+  </div>
+
+</div>
+
+<script>
+function start() {
+  document.getElementById("startScreen").classList.add("hidden");
+  document.getElementById("proposal").classList.remove("hidden");
+  document.getElementById("music").play();
+}
+
+function yes() {
+  document.getElementById("proposal").classList.add("hidden");
+  document.getElementById("yesScreen").classList.remove("hidden");
+}
+
+function finalLove() {
+  document.getElementById("yesScreen").classList.add("hidden");
+  document.getElementById("loveScreen").classList.remove("hidden");
+}
+
+function moveNo() {
+  const btn = document.getElementById("noBtn");
+  btn.style.position = "absolute";
+  btn.style.left = Math.random() * 200 + "px";
+  btn.style.top = Math.random() * 200 + "px";
+}
+</script>
+
+</body>
+</html>
